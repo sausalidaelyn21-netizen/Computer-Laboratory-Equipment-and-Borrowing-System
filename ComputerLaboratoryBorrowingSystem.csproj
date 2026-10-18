@@ -1,0 +1,37 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <RootNamespace>ComputerLaboratoryBorrowingSystem</RootNamespace>
+    <AssemblyName>ComputerLaboratoryBorrowingSystem</AssemblyName>
+    <!-- Used by "dotnet user-secrets" to keep the DB password and initial admin password out of source control. -->
+    <UserSecretsId>clems-6f1d2b7e-4c1a-4a8e-9a43-2f6f2b9c7d11</UserSecretsId>
+  </PropertyGroup>
+
+  <!--
+    Pomelo.EntityFrameworkCore.MySql has no EF Core 10 build yet. Its newest release (9.0.0) supports EF Core 9.0.x only,
+    so every EF Core package below is pinned to the same 9.0.x line. EF Core 9 runs on .NET 10.
+    Do NOT upgrade any Microsoft.EntityFrameworkCore.* package to 10.x unless Pomelo also ships a 10.x release.
+  -->
+  <ItemGroup>
+    <PackageReference Include="Pomelo.EntityFrameworkCore.MySql" Version="9.0.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="9.0.10" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="9.0.10" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="9.0.10">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <!-- Enables Add-Migration / Update-Database in Visual Studio's Package Manager Console. -->
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="9.0.10">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <InternalsVisibleTo Include="ComputerLaboratoryBorrowingSystem.Tests" />
+  </ItemGroup>
+
+</Project>

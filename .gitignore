@@ -1,0 +1,15 @@
+## Build output
+bin/
+obj/
+[Dd]ebug/
+[Rr]elease/
+*.user
+*.suo
+.vs/
+TestResults/
+
+## Never commit local secrets or machine-specific settings
+appsettings.Development.Local.json
+appsettings.*.Local.json
+*.secrets.json
+secrets.json
